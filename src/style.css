@@ -1,0 +1,217 @@
+@keyframes flutuar{
+
+    0%{
+        transform: translateY(0px)
+    }
+
+    50%{
+        transform: translateY(4px)
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes trocaCores{
+    from{
+        background-position: 0% 0%;
+    }
+    to{
+        background-position: 200% 0%;
+    }
+}
+
+body, button{
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+.botao_teclado{
+    width: 40px;
+    height: 50px;
+    transition: transform 0.2s ease;
+    border-radius: 6px;
+    border-width: 1px;
+    box-shadow: 0px 2px 10px lightgrey;
+}
+
+.botao_teclado:active{
+    transform: scale(0.96);
+}
+
+.botao_numero{
+    background-color: pink;
+}
+
+.botao_numero:hover{
+    background-color: rgb(250, 171, 184);
+}
+
+.botao_operacao:hover, .botao_apagador:hover{
+    background-color:rgb(255, 138, 153);
+    transform: scale(1.05);
+    border-width: 2px;
+}
+
+.botao_zero{
+    width: 90px;
+}
+
+.botao_apagador{
+    height: 113px;
+    width: 45px;
+}
+
+.botao_submit{
+    width: 190px;
+    height: 50px;
+    background: rgb(242, 134, 152);
+    border-radius: 6px;
+    color: black;
+    border-width: 1px;
+    font-size: 20px;
+    box-shadow: 0 5px 10px rgb(161, 158, 158);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+
+    background: linear-gradient(
+        90deg,
+        rgb(242, 134, 152) 0%,
+        rgb(255, 120, 170) 25%,
+        rgb(255, 150, 190) 50%,
+        rgb(255, 120, 170) 75%,
+        rgb(242, 134, 152) 100%
+    );
+
+    background-size: 200% 100%;
+}
+
+.botao_submit:active{
+    transform: scale(0.96);
+}
+
+.botao_submit:hover{
+    animation: trocaCores 1.5s linear infinite;
+}
+.botao_submit::after{
+    content: "";
+    width: 100px;
+    height: 100px;
+    image-rendering: pixelated;
+    background-image: url("/img/coracoes.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 35%;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    animation: flutuar 1s infinite ease-in-out;
+}
+
+.botao_submit:hover::after{
+    opacity: 1;
+}
+
+.calculadora{
+    width: 240px;
+    height: 300px;
+    position: relative;
+    padding-top: 27px;
+    padding-left: 10px;
+}
+
+.calculadora::before{
+    background-color: rgb(255, 181, 234);
+    border-radius: 6px;
+}
+
+.teclado_submit{
+    width:240px;
+    height: 50px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.teclado_calculadora{
+    width: 240px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+}
+
+.teclado_numerico{
+    width: 150px;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.teclado_operacoes{
+    width: 45px;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teclado_apagador{
+    width: 45px;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.visor{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: black;
+    padding-top: 75px;
+    padding-left: 10px;
+}
+
+.imagem_canto{
+    width: 48px;
+    height: 50px;
+    display: flex;
+    background-image: url("./img/laco.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5px
+}
+
+.fundo_calculadora{
+    position: relative;
+    left: 250px;
+    top: 25px
+}
+
+.fundo_calculadora::before{
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 520px;
+
+    background-image: url("./img/fundo_calculadora.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+
+
+    border-radius: 10px;
+
+    top: -20px;
+    left: -15px;
+
+    z-index: -1;
+}
